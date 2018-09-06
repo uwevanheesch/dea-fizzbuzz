@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FizzBuzz {
 
-    private List<String> players = new ArrayList<>();
+    List<String> players = new ArrayList<>();
     private NameGenerator nameGenerator = new NameGenerator();
 
     public void addPlayer(String name) {
@@ -18,17 +18,19 @@ public class FizzBuzz {
         players.add(nameGenerator.generateName().getFirstName());
     }
 
-    public void play(int limit) {
+    public void play(int limit) throws FizzBuzzException {
         if (players.isEmpty()) {
-            IllegalStateException exception = new IllegalStateException("No players found.");
-            throw exception;
+            throw new FizzBuzzException("Have No players found.");
         }
 
         for (int i = 1; i <= limit; i++) {
-            int index = (i - 1) % players.size();
-            System.out.println(players.get(index) + " says " + printWordOnPosition(i));
+            System.out.println(players.get(calculcatePlayerIndex(i)) + " says " + printWordOnPosition(i));
         }
 
+    }
+
+    int calculcatePlayerIndex(int number) {
+        return (number - 1) % players.size();
     }
 
     String printWordOnPosition(int number) {

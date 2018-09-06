@@ -13,9 +13,9 @@ public class App {
 
         try {
             fizzBuzz.play(100);
-        } catch (IllegalStateException ex) {
-            System.out.println("Problem: " + ex.getMessage());
-            throw ex;
+        } catch (FizzBuzzException e) {
+            System.out.println(e.getMessage());
+            throw e;
         }
 
     }
