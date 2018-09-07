@@ -16,6 +16,7 @@ public class FizzBuzzTest {
 
     @Before
     public void setUp() throws Exception {
+        // What we define here becomes part of the test fixture
         fizzBuzz = new FizzBuzz();
     }
 
@@ -54,6 +55,7 @@ public class FizzBuzzTest {
 
     @Test
     public void testThatPlayerIndexIsZero() {
+        // the following two lines belong to the test fixture
         fizzBuzz.players.add("Player1");
         fizzBuzz.players.add("Player2");
 
