@@ -20,7 +20,7 @@ public class FizzBuzz {
 
     public void play(int limit) throws FizzBuzzException {
         if (players.isEmpty()) {
-            throw new FizzBuzzException("Have No players found.");
+            throw new FizzBuzzException("No players found.");
         }
 
         for (int i = 1; i <= limit; i++) {
