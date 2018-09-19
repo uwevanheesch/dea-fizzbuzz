@@ -1,21 +1,24 @@
 package nl.han.oose;
 
-import org.ajbrown.namemachine.NameGenerator;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class FizzBuzz {
 
     List<String> players = new ArrayList<>();
-    private NameGenerator nameGenerator = new NameGenerator();
+
+    private PlayerGenerator nameGenerator;
+
+    public FizzBuzz(PlayerGenerator nameGenerator) {
+        this.nameGenerator = nameGenerator;
+    }
 
     public void addPlayer(String name) {
         this.players.add(name);
     }
 
     public void addRandomPlayer() {
-        players.add(nameGenerator.generateName().getFirstName());
+        players.add(nameGenerator.generateRandomName());
     }
 
     public void play(int limit) throws FizzBuzzException {

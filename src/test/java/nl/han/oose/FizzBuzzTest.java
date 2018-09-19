@@ -1,8 +1,5 @@
 package nl.han.oose;
 
-import org.ajbrown.namemachine.Gender;
-import org.ajbrown.namemachine.Name;
-import org.ajbrown.namemachine.NameGenerator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -28,7 +25,7 @@ public class FizzBuzzTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Mock
-    private NameGenerator nameGeneratorMock;
+    private PlayerGenerator playerGeneratorMock;
 
 
     private PrintStream originalSysOut;
@@ -77,8 +74,7 @@ public class FizzBuzzTest {
 
     @Test
     public void testThatRandomNameCanBeAdded() {
-        Name name = new Name("Hans", "Wurst", Gender.MALE);
-        Mockito.when(nameGeneratorMock.generateName()).thenReturn(name);
+        Mockito.when(playerGeneratorMock.generateRandomName()).thenReturn("Hans");
         fizzBuzz.addRandomPlayer();
         assertEquals("Hans", fizzBuzz.players.get(0));
     }
