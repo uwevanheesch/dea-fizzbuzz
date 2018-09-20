@@ -19,7 +19,9 @@ public class FizzBuzz {
 
     public void addRandomPlayer() {
         players.add(nameGenerator.generateRandomName());
+        System.out.println("Added player with avg score: " + nameGenerator.getAvgerageScore());
     }
+
 
     public void play(int limit) throws FizzBuzzException {
         if (players.isEmpty()) {

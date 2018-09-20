@@ -6,7 +6,6 @@ public class App {
 
         FizzBuzz fizzBuzz = new FizzBuzz(new NameGeneratorAdapter());
 
-        // Adding no players to cause exception; Uncomment block to get a working app
         fizzBuzz.addPlayer("Peter");
         fizzBuzz.addRandomPlayer();
         fizzBuzz.addRandomPlayer();
